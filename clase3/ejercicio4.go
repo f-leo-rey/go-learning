@@ -39,7 +39,7 @@ func CalcularSalario(minutos int, categoria string) (string, error) {
 		categoriaA float64 = 3.000
 	)
 
-	if minutos < 0 {
+	if minutos <= 0 {
 		return "", errors.New("Los minutos trabajados no corresponde a un valor valido.")
 	}
 
@@ -52,7 +52,7 @@ func CalcularSalario(minutos int, categoria string) (string, error) {
 	case "C":
 		return total(horasTrabajadas, categoriaC, 0), nil
 	default:
-		return fmt.Sprint("La categoria no aplica."), nil
+		return "", errors.New("La categoria no aplica.")
 	}
 }
 
