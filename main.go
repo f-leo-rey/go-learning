@@ -76,4 +76,32 @@ func main() {
 
 	//Calcular cantidad alimento
 
+	dog, err := clase3.Animal("dog")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	resdog, _ := dog(10)
+	fmt.Printf("Alimento requerido: %vKG\n", resdog)
+
+	//cat
+	cat, err := clase3.Animal("cat")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	rescat, _ := cat(10)
+	fmt.Printf("Alimento requerido: %vKG\n", rescat)
+
+	hamster, err := clase3.Animal("hamster")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	reshamster, _ := hamster(10)
+	fmt.Printf("Alimento requerido: %vG\n", reshamster)
+
+	tarantula, err := clase3.Animal("tarantula")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	restarantula, _ := tarantula(10)
+	fmt.Printf("Alimento requerido: %vG\n", restarantula)
 }

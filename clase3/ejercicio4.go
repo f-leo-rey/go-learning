@@ -119,3 +119,46 @@ func maximun(numeros ...int) (int, error) {
 	}
 	return max, nil
 }
+
+func Animal(typeAnimal string) (func(quantity float64) (float64, error), error) {
+	switch typeAnimal {
+	case "dog":
+		return animalDog, nil
+	case "cat":
+		return animalCat, nil
+	case "hamster":
+		return animalHamter, nil
+	case "tarantula":
+		return animalTarantula, nil
+	}
+
+	return nil, errors.New("Animal no exist!")
+}
+
+func animalDog(quantity float64) (float64, error) {
+	if quantity < 1 {
+		return 0, errors.New("Quantity is invalid value.")
+	}
+	return (quantity * 10), nil
+}
+
+func animalCat(quantity float64) (float64, error) {
+	if quantity < 1 {
+		return 0, errors.New("Quantity is invalid value.")
+	}
+	return (quantity * 5), nil
+}
+
+func animalHamter(quantity float64) (float64, error) {
+	if quantity < 1 {
+		return 0, errors.New("Quantity is invalid value.")
+	}
+	return (quantity * 0.25), nil
+}
+
+func animalTarantula(quantity float64) (float64, error) {
+	if quantity < 1 {
+		return 0, errors.New("Quantity is invalid value.")
+	}
+	return (quantity * 0.15), nil
+}
