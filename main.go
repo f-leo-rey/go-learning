@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"github.com/f-leo-rey/go-learning/clase3"
+	"github.com/f-leo-rey/go-learning/clase4"
 )
 
 func main() {
@@ -34,7 +33,7 @@ func main() {
 		fmt.Println("Promedio: ", promedio)
 	*/
 	//Calcular salario
-	salarioA, err := clase3.CalcularSalario(5000, "A")
+	/*salarioA, err := clase3.CalcularSalario(5000, "A")
 
 	if err != nil {
 		fmt.Println(err.Error())
@@ -59,7 +58,7 @@ func main() {
 		return
 	}
 
-	fmt.Println(salarioC)
+	fmt.Println(salarioC)*/
 
 	//Estadistica
 	/*
@@ -108,4 +107,12 @@ func main() {
 
 	//Testing
 
+	//Struct
+
+	//clase4.PrintLibro()
+	person := clase4.Person{Id: 1, Name: "Jose", DateOfBirth: "23-10-1992"}
+	employe := clase4.Employe{Id: 20, Position: "Manager", Person: person}
+	employe.PrintEmployee()
+
+	clase4.ManagementProduct()
 }
