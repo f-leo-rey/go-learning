@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/f-leo-rey/go-learning/clase4"
 )
 
@@ -110,9 +112,31 @@ func main() {
 	//Struct
 
 	//clase4.PrintLibro()
-	person := clase4.Person{Id: 1, Name: "Jose", DateOfBirth: "23-10-1992"}
+	/*person := clase4.Person{Id: 1, Name: "Jose", DateOfBirth: "23-10-1992"}
 	employe := clase4.Employe{Id: 20, Position: "Manager", Person: person}
 	employe.PrintEmployee()
 
-	clase4.ManagementProduct()
+	clase4.ManagementProduct()*/
+
+	//clase4.Show()
+
+	clase4.Punteros()
+
+	p1 := clase4.Stock{Name: "Moto", Cost: 50.000, Category: clase4.Category{Name: "Small", Percentage: 0}}
+	var p2 *clase4.Stock
+	p2 = &p1
+	prod := p1.Factory(p2)
+	fmt.Println(prod.Price())
+
+	p3 := clase4.Stock{Name: "Moto", Cost: 50.000, Category: clase4.Category{Name: "Medium", Percentage: 1.3}}
+	var p4 *clase4.Stock
+	p4 = &p3
+	prod2 := p3.Factory(p4)
+	fmt.Println(prod2.Price())
+
+	p5 := clase4.Stock{Name: "Moto", Cost: 50.000, ShippingCost: 2.500, Category: clase4.Category{Name: "Large", Percentage: 1.6}}
+	var p6 *clase4.Stock
+	p6 = &p5
+	prod3 := p5.Factory(p6)
+	fmt.Println(prod3.Price())
 }
