@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/f-leo-rey/go-learning/clase4"
+	"github.com/f-leo-rey/go-learning/clase6"
 )
 
 func main() {
@@ -120,7 +118,7 @@ func main() {
 
 	//clase4.Show()
 
-	clase4.Punteros()
+	/*clase4.Punteros()
 
 	p1 := clase4.Stock{Name: "Moto", Cost: 50.000, Category: clase4.Category{Name: "Small", Percentage: 0}}
 	var p2 *clase4.Stock
@@ -138,5 +136,40 @@ func main() {
 	var p6 *clase4.Stock
 	p6 = &p5
 	prod3 := p5.Factory(p6)
-	fmt.Println(prod3.Price())
+	fmt.Println(prod3.Price())*/
+	/*err := clase5.Salary(100000)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	clase5.Salary2(5000)
+	clase5.Salary3(5000)
+	clase5.Salary4(5000)
+
+	total, err := clase5.CalculteSalary(80, 2000)
+
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	fmt.Println(total)*/
+
+	//clase5.IsPair(2, 4, 6, 8, 7)
+
+	/*clase5.ReadFile("customers.txt")
+	fmt.Println("ejecución finalizada")
+
+	clase5.ReadCustomers("customers.txtr")*/
+
+	/*transaction := []clase5.Transaction{
+		{From: clase5.Account{Nombre: "Jack", Saldo: 100_000}, To: clase5.Account{Nombre: "Doe", Saldo: 100_000}, Ammount: 50_000},
+		{From: clase5.Account{Nombre: "Pedro", Saldo: 200_000}, To: clase5.Account{Nombre: "Juan", Saldo: 100_000}, Ammount: 400_000},
+	}
+
+	clase5.Transfer(&transaction)
+
+	fmt.Println(transaction)*/
+
+	clase6.ReadJson()
 }
