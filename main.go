@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/f-leo-rey/go-learning/clase6"
 )
 
@@ -171,5 +173,50 @@ func main() {
 
 	fmt.Println(transaction)*/
 
-	clase6.ReadJson()
+	//clase6.ReadJson()
+
+	inventario := []clase6.Inventario{
+		{Id: "1", Nombre: "Computador", Precio: "20.500", Cantidad: "50"},
+		{Id: "2", Nombre: "Teclado", Precio: "30.500", Cantidad: "10"},
+		{Id: "3", Nombre: "Mouse", Precio: "60.500", Cantidad: "5"},
+	}
+
+	//escribir un archivo file
+	clase6.WriterFile(inventario)
+
+	//Leer archivo
+	productos := clase6.ReadFile()
+
+	//Obtener por id
+	producto, err := productos.GetById("2")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(producto)
+
+	//Agrego uno nuevo
+	productos.AddNew(clase6.Inventario{Nombre: "Diadema", Id: "4", Precio: "12.250", Cantidad: "6"})
+	//Escribo el nuevo
+	clase6.WriterFile(productos)
+
+	//Editar uno existente
+	producto.Nombre = "Teclado editado"
+	productos.Edit(producto)
+
+	//Guardar la edición
+	clase6.WriterFile(productos)
+
+	//Obtener todos
+	todos := productos.GetAll()
+	fmt.Println(todos)
+
+	//Eliminar un elemento
+	productos.Delete("3")
+
+	//Obtener todos
+	todos = productos.GetAll()
+	fmt.Println(todos)
+
+	//Guardar la eliminación
+	clase6.WriterFile(productos)
 }

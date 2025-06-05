@@ -85,6 +85,7 @@ func CrearJson(res resultado) error {
 	if err != nil {
 		return errors.New("Error de escritura")
 	}
+	os.Clearenv()
 
 	return nil
 }
